@@ -11,6 +11,7 @@
 		CB823193267E4747003C72AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB823192267E4747003C72AB /* ContentView.swift */; };
 		CB823195267E474A003C72AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB823194267E474A003C72AB /* Assets.xcassets */; };
 		CB823198267E474A003C72AB /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CB823197267E474A003C72AB /* Preview Assets.xcassets */; };
+		CB8231A4267E5699003C72AB /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB8231A3267E5699003C72AB /* HomeView.swift */; };
 		ECB1015CE731C3C794A0588B /* Pods_iOS_CICD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27478ABF951ECC5DC803672E /* Pods_iOS_CICD.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +25,7 @@
 		CB823194267E474A003C72AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CB823197267E474A003C72AB /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		CB823199267E474A003C72AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CB8231A3267E5699003C72AB /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				CB823194267E474A003C72AB /* Assets.xcassets */,
 				CB823199267E474A003C72AB /* Info.plist */,
 				CB823196267E474A003C72AB /* Preview Content */,
+				CB8231A3267E5699003C72AB /* HomeView.swift */,
 			);
 			path = "iOS-CICD";
 			sourceTree = "<group>";
@@ -90,7 +93,6 @@
 				06AC78B0B84011BCD031165F /* Pods-iOS-CICD.debug.xcconfig */,
 				444B21D5A6A136D5302FBBEC /* Pods-iOS-CICD.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -208,6 +210,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB8231A4267E5699003C72AB /* HomeView.swift in Sources */,
 				CB823193267E4747003C72AB /* ContentView.swift in Sources */,
 				CB823191267E4747003C72AB /* iOS_CICDApp.swift in Sources */,
 			);
