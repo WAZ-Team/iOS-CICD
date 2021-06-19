@@ -1,0 +1,36 @@
+name: Swift
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  swiftLint:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Bundle
+      run: bundle install
+    - name: Run swiftlint
+      run: bundle exec fastlane swiftLintLane
+      
+  staging:
+    needs: swiftLint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Bundle
+      run: bundle install
+    - name: Run staging
+      run: bundle exec fastlane stagingLane
+      
+  production:
+    needs: swiftLint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Bundle
+      run: bundle install
+    - name: Run production
+      run: bundle exec fastlane productionLane
