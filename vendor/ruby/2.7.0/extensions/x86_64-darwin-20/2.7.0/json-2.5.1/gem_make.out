@@ -1,0 +1,13 @@
+current directory: /Volumes/Data/MyWorks/Freelance/WAZ-Team/iOS-CICD/vendor/ruby/2.7.0/gems/json-2.5.1/ext/json
+/usr/local/opt/ruby@2.7/bin/ruby -I /usr/local/Cellar/ruby@2.7/2.7.3/lib/ruby/2.7.0 -r ./siteconf20210619-28002-1ak6aka.rb extconf.rb
+creating Makefile
+
+current directory: /Volumes/Data/MyWorks/Freelance/WAZ-Team/iOS-CICD/vendor/ruby/2.7.0/gems/json-2.5.1/ext/json
+make DESTDIR\= clean
+
+current directory: /Volumes/Data/MyWorks/Freelance/WAZ-Team/iOS-CICD/vendor/ruby/2.7.0/gems/json-2.5.1/ext/json
+make DESTDIR\=
+make: Nothing to be done for `all'.
+
+current directory: /Volumes/Data/MyWorks/Freelance/WAZ-Team/iOS-CICD/vendor/ruby/2.7.0/gems/json-2.5.1/ext/json
+make DESTDIR\= install
