@@ -15,12 +15,12 @@ public class Matchfile: MatchfileProtocol {
     // If you want to enable `match`, run `fastlane match init`
     // After, this file will be replaced with a custom implementation that contains values you supplied
     // during the `init` process, and you won't see this message
-    var username: String {
+    public var username: String {
         return "namnh@vmodev.com"
     }
     
-    var teamId: String {
-        return environmentVariable(get: "TEAM_ID")
+    public var teamId: String {
+        return "H4C7478UQW"
     }
     
     public var gitUrl: String {
