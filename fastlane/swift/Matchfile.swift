@@ -22,6 +22,10 @@ public class Matchfile: MatchfileProtocol {
     public var gitBranch: String {
         return "master"
     }
+    
+    public var gitBasicAuthorization: String? {
+        return "namnh92:Namkhang2911".data(using: .utf8)?.base64EncodedString()
+    }
 }
 
 // Generated with fastlane 2.182.0
