@@ -24,8 +24,10 @@ jobs:
       run: bundle install
     - name: Run staging
       env: 
-        MATCH_PASSWORD: "123123"
-        APPLE_ID: "namnh@vmodev.com"
+        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
       run: bundle exec fastlane stagingLane
       
   production:
@@ -36,7 +38,9 @@ jobs:
     - name: Install Bundle
       run: bundle install
     - name: Run production
-      env: 
-        MATCH_PASSWORD: "123123"
-        APPLE_ID: "namnh@vmodev.com"
+      env:
+        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
       run: bundle exec fastlane productionLane
