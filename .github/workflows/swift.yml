@@ -22,10 +22,9 @@ jobs:
     - uses: actions/checkout@v2
     - name: Install Bundle
       run: bundle install
-    - name: Set Env
+    - name: Run staging
       env: 
         MATCH_PASSWORD: "123123"
-    - name: Run staging
       run: bundle exec fastlane stagingLane
       
   production:
