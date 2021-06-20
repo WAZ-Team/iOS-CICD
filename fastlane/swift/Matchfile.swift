@@ -32,7 +32,7 @@ public class Matchfile: MatchfileProtocol {
     }
     
     public var gitBasicAuthorization: String? {
-        return "bmFtbmg5MjpnaHBfVGw0Yk1jcDhSeUNZWTJmeHZRYzk3T2dwZmRWaDlPMll6VlFJ"
+        return ("namnh92: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").data(using: .utf8)?.base64EncodedString()
     }
     
 //    public var gitPrivateKey: String? {
