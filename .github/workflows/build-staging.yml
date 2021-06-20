@@ -2,7 +2,7 @@ name: Swift
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ staging ]
 
 jobs:
 
@@ -29,6 +29,7 @@ jobs:
         MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
+        FASTLANE_TEAM_NAME: ${{ secrets.FASTLANE_TEAM_NAME }}
       run: bundle exec fastlane stagingLane
       
 #   production:
