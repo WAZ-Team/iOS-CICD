@@ -78,7 +78,7 @@ public protocol DeliverfileProtocol: class {
     var resetRatings: Bool { get }
 
     /// The price tier of this application
-    var priceTier: Int? { get }
+    var priceTier: String? { get }
 
     /// Path to the app rating's config
     var appRatingConfigPath: String? { get }
@@ -137,7 +137,7 @@ public protocol DeliverfileProtocol: class {
     /// Metadata: The english name of the secondary second sub category (e.g. `Educational`, `Puzzle`)
     var secondarySecondSubCategory: String? { get }
 
-    /// **DEPRECATED!** This is no longer used by App Store Connect - Metadata: A hash containing the trade representative contact information
+    /// Metadata: A hash containing the trade representative contact information
     var tradeRepresentativeContactInformation: [String: Any]? { get }
 
     /// Metadata: A hash containing the review information
@@ -147,10 +147,10 @@ public protocol DeliverfileProtocol: class {
     var appReviewAttachmentFile: String? { get }
 
     /// Metadata: The localised app description
-    var description: [String: Any]? { get }
+    var description: String? { get }
 
     /// Metadata: The localised app name
-    var name: [String: Any]? { get }
+    var name: String? { get }
 
     /// Metadata: The localised app subtitle
     var subtitle: [String: Any]? { get }
@@ -162,19 +162,19 @@ public protocol DeliverfileProtocol: class {
     var promotionalText: [String: Any]? { get }
 
     /// Metadata: Localised release notes for this version
-    var releaseNotes: [String: Any]? { get }
+    var releaseNotes: String? { get }
 
     /// Metadata: Localised privacy url
-    var privacyUrl: [String: Any]? { get }
+    var privacyUrl: String? { get }
 
     /// Metadata: Localised Apple TV privacy policy text
-    var appleTvPrivacyPolicy: [String: Any]? { get }
+    var appleTvPrivacyPolicy: String? { get }
 
     /// Metadata: Localised support url
-    var supportUrl: [String: Any]? { get }
+    var supportUrl: String? { get }
 
     /// Metadata: Localised marketing url
-    var marketingUrl: [String: Any]? { get }
+    var marketingUrl: String? { get }
 
     /// Metadata: List of languages to activate
     var languages: [String]? { get }
@@ -186,7 +186,7 @@ public protocol DeliverfileProtocol: class {
     var precheckIncludeInAppPurchases: Bool { get }
 
     /// The (spaceship) app ID of the app you want to use/modify
-    var app: Int? { get }
+    var app: String { get }
 }
 
 public extension DeliverfileProtocol {
@@ -215,7 +215,7 @@ public extension DeliverfileProtocol {
     var autoReleaseDate: Int? { return nil }
     var phasedRelease: Bool { return false }
     var resetRatings: Bool { return false }
-    var priceTier: Int? { return nil }
+    var priceTier: String? { return nil }
     var appRatingConfigPath: String? { return nil }
     var submissionInformation: [String: Any]? { return nil }
     var teamId: String? { return nil }
@@ -238,22 +238,22 @@ public extension DeliverfileProtocol {
     var tradeRepresentativeContactInformation: [String: Any]? { return nil }
     var appReviewInformation: [String: Any]? { return nil }
     var appReviewAttachmentFile: String? { return nil }
-    var description: [String: Any]? { return nil }
-    var name: [String: Any]? { return nil }
+    var description: String? { return nil }
+    var name: String? { return nil }
     var subtitle: [String: Any]? { return nil }
     var keywords: [String: Any]? { return nil }
     var promotionalText: [String: Any]? { return nil }
-    var releaseNotes: [String: Any]? { return nil }
-    var privacyUrl: [String: Any]? { return nil }
-    var appleTvPrivacyPolicy: [String: Any]? { return nil }
-    var supportUrl: [String: Any]? { return nil }
-    var marketingUrl: [String: Any]? { return nil }
+    var releaseNotes: String? { return nil }
+    var privacyUrl: String? { return nil }
+    var appleTvPrivacyPolicy: String? { return nil }
+    var supportUrl: String? { return nil }
+    var marketingUrl: String? { return nil }
     var languages: [String]? { return nil }
     var ignoreLanguageDirectoryValidation: Bool { return false }
     var precheckIncludeInAppPurchases: Bool { return true }
-    var app: Int? { return nil }
+    var app: String { return "" }
 }
 
 // Please don't remove the lines below
 // They are used to detect outdated files
-// FastlaneRunnerAPIVersion [0.9.73]
+// FastlaneRunnerAPIVersion [0.9.66]
