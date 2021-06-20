@@ -13,10 +13,6 @@ class Fastfile: LaneFile {
         return environmentVariable(get: "CI") == "true" ? true : false
     }
     
-    var targetSchemeName: String {
-        return environmentVariable(get: "TARGET_SCHEME_NAME")
-    }
-    
     func swiftLintLane() {
         desc("Run SwiftLint")
         
@@ -57,18 +53,17 @@ class Fastfile: LaneFile {
         // Update provisioning profile and certificate for the specified build configuration
         match(
             type: configuration.exportMethod,
-            readonly: isCI,
+            readonly: .fastlaneDefault(isCI),
             appIdentifier: [configuration.bundleIdentifier],
-            gitBranch: targetSchemeName,
-            forceForNewDevices: configuration.exportMethod == "development"
+            forceForNewDevices: .fastlaneDefault(configuration.exportMethod == "development")
         )
 
         // Build the product for the specified build configuration
         gym(
-            scheme: .fastlaneDefault(targetSchemeName),
-            outputName: .fastlaneDefault("\(targetSchemeName)-\(configuration.buildConfiguration).ipa"),
+            scheme: .fastlaneDefault(configuration.targetSchemeName),
+            outputName: .fastlaneDefault("\(configuration.targetSchemeName)-\(configuration.buildConfiguration).ipa"),
             configuration: .fastlaneDefault(configuration.buildConfiguration),
-            skipPackageIpa: !exportIpa
+            skipPackageIpa: .fastlaneDefault(!exportIpa)
         )
     }
 }
@@ -76,6 +71,7 @@ class Fastfile: LaneFile {
 protocol Configuration {
     var exportMethod: String { get }
     var buildConfiguration: String { get }
+    var targetSchemeName: String { get }
     var bundleIdentifier: String { get }
 }
 
@@ -83,19 +79,19 @@ struct InternalDebug: Configuration {
     // Configuration for building debug builds on physical devices in-house
     var exportMethod = "development"
     var buildConfiguration = "Debug"
+    var targetSchemeName = "develop"
     var bundleIdentifier: String {
-        let rootIdentifier = environmentVariable(get: "BUNDLE_IDENTIFIER")
-        return "\(rootIdentifier).debug"
+        return "\(appIdentifier).development"
     }
 }
 
 struct TestFlight: Configuration {
     // Configuration for building test builds to deploy in Test Flight
     var exportMethod = "appstore"
-    var buildConfiguration = "Staging"
+    var buildConfiguration = "Test"
+    var targetSchemeName = "staging"
     var bundleIdentifier: String {
-        let rootIdentifier = environmentVariable(get: "BUNDLE_IDENTIFIER")
-        return "\(rootIdentifier).staging"
+        return "\(appIdentifier).staging"
     }
 }
 
@@ -103,8 +99,8 @@ struct AppStore: Configuration {
     // Configuration for building release builds to deploy in App Store
     var exportMethod = "appstore"
     var buildConfiguration = "Release"
+    var targetSchemeName = "production"
     var bundleIdentifier: String {
-        let rootIdentifier = environmentVariable(get: "BUNDLE_IDENTIFIER")
-        return "\(rootIdentifier)"
+        return "\(appIdentifier).dev"
     }
 }
