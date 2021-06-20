@@ -20,11 +20,11 @@ class Fastfile: LaneFile {
         cocoapods()
         
 //        deleteKeychain(name: "fastlane_keychain")
-        createKeychain(name: "fastlane_keychain",
-                       password: "123123",
-                       defaultKeychain: .fastlaneDefault(true),
-                       unlock: .fastlaneDefault(true),
-                       timeout: 3600)
+//        createKeychain(name: "fastlane_keychain",
+//                       password: "123123",
+//                       defaultKeychain: .fastlaneDefault(true),
+//                       unlock: .fastlaneDefault(true),
+//                       timeout: 3600)
         
         swiftlint(configFile: ".swiftlint.yml",
                   strict: true,
@@ -57,16 +57,16 @@ class Fastfile: LaneFile {
     
     private func buildProduct(configuration: Configuration, exportIpa: Bool) {
 
-        unlockKeychain(password: "123123",
-                       setDefault: .fastlaneDefault(true))
+//        unlockKeychain(password: "123123",
+//                       setDefault: .fastlaneDefault(true))
         
         // Update provisioning profile and certificate for the specified build configuration
         match(
             type: configuration.exportMethod,
             readonly: .fastlaneDefault(isCI),
             appIdentifier: [configuration.bundleIdentifier],
-            keychainName: "fastlane_keychain",
-            keychainPassword: "123123",
+//            keychainName: "fastlane_keychain",
+//            keychainPassword: "123123",
             forceForNewDevices: .fastlaneDefault(configuration.exportMethod == "development")
         )
 
