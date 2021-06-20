@@ -1,4 +1,4 @@
-name: Swift
+name: Staging
 
 on:
   pull_request:
