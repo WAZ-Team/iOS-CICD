@@ -53,9 +53,9 @@ class Fastfile: LaneFile {
         // Update provisioning profile and certificate for the specified build configuration
         match(
             type: configuration.exportMethod,
-            readonly: isCI,
+            readonly: .fastlaneDefault(isCI),
             appIdentifier: [configuration.bundleIdentifier],
-            forceForNewDevices: configuration.exportMethod == "development"
+            forceForNewDevices: .fastlaneDefault(configuration.exportMethod == "development")
         )
 
         // Build the product for the specified build configuration
@@ -63,7 +63,7 @@ class Fastfile: LaneFile {
             scheme: .fastlaneDefault(configuration.targetSchemeName),
             outputName: .fastlaneDefault("\(configuration.targetSchemeName)-\(configuration.buildConfiguration).ipa"),
             configuration: .fastlaneDefault(configuration.buildConfiguration),
-            skipPackageIpa: !exportIpa
+            skipPackageIpa: .fastlaneDefault(!exportIpa)
         )
     }
 }
@@ -87,7 +87,7 @@ struct InternalDebug: Configuration {
 
 struct TestFlight: Configuration {
     // Configuration for building test builds to deploy in Test Flight
-    var exportMethod = "appstore"
+    var exportMethod = "adhoc"
     var buildConfiguration = "Test"
     var targetSchemeName = "staging"
     var bundleIdentifier: String {
