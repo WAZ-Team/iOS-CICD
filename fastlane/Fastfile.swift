@@ -19,6 +19,12 @@ class Fastfile: LaneFile {
         // Run 'pod install'
         cocoapods()
         
+        createKeychain(path: "$RUNNER_TEMP/app-signing.keychain-db",
+                       password: "123",
+                       defaultKeychain: .fastlaneDefault(true),
+                       unlock: .fastlaneDefault(true),
+                       timeout: 3600)
+        
         swiftlint(configFile: ".swiftlint.yml",
                   strict: true,
                   ignoreExitStatus: false,
@@ -50,13 +56,15 @@ class Fastfile: LaneFile {
     
     private func buildProduct(configuration: Configuration, exportIpa: Bool) {
 
+        unlockKeychain(path: "$RUNNER_TEMP/app-signing.keychain-db",
+                       password: "123",
+                       setDefault: .fastlaneDefault(true))
+        
         // Update provisioning profile and certificate for the specified build configuration
         match(
             type: configuration.exportMethod,
             readonly: .fastlaneDefault(isCI),
             appIdentifier: [configuration.bundleIdentifier],
-            keychainName: "fastlane_tmp_keychain",
-            keychainPassword: "123",
             forceForNewDevices: .fastlaneDefault(configuration.exportMethod == "development")
         )
 
