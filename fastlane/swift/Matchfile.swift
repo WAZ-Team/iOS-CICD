@@ -24,7 +24,7 @@ public class Matchfile: MatchfileProtocol {
     }
     
     public var gitUrl: String {
-        return "https://github.com/WAZ-Team/Certificates-Provisionings.git"
+        return "https://github.com/WAZ-Team/CertsAndProvisionings.git"
     }
     
     public var gitBranch: String {
@@ -32,7 +32,7 @@ public class Matchfile: MatchfileProtocol {
     }
     
     public var gitBasicAuthorization: String? {
-        return "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"
+        return "bmFtbmg5MjpnaHBfVGw0Yk1jcDhSeUNZWTJmeHZRYzk3T2dwZmRWaDlPMll6VlFJ"
     }
     
 //    public var gitPrivateKey: String? {
