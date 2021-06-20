@@ -1,3 +1,5 @@
 # iOS-CICD
 
-[![Swift](https://github.com/WAZ-Team/iOS-CICD/actions/workflows/swift.yml/badge.svg)](https://github.com/WAZ-Team/iOS-CICD/actions/workflows/swift.yml)
+[![Staging](https://github.com/WAZ-Team/iOS-CICD/actions/workflows/swift.yml/badge.svg)](https://github.com/WAZ-Team/iOS-CICD/actions/workflows/swift.yml)
+
+[![Develop](https://github.com/WAZ-Team/iOS-CICD/actions/workflows/build-debug.yml/badge.svg)](https://github.com/WAZ-Team/iOS-CICD/actions/workflows/build-debug.yml)
