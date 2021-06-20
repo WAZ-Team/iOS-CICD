@@ -18,7 +18,7 @@ class Fastfile: LaneFile {
         
         // Run 'pod install'
         cocoapods()
-        
+        setupCircleCi()
         swiftlint(configFile: ".swiftlint.yml",
                   strict: true,
                   ignoreExitStatus: false,
