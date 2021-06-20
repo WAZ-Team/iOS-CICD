@@ -30,4 +30,4 @@ jobs:
         FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
         FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
         FASTLANE_TEAM_NAME: ${{ secrets.FASTLANE_TEAM_NAME }}
-      run: bundle exec fastlane stagingLane
+      run: bundle exec fastlane debugLane
