@@ -299,7 +299,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.telred.clearkeep3.ios.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = "clearkeep3_staging-adhoc";
+				PROVISIONING_PROFILE_SPECIFIER = "match AdHoc com.telred.clearkeep3.ios.staging";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -440,7 +440,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.telred.clearkeep3.ios.development;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = clearkeep3_development;
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.telred.clearkeep3.ios.development";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -465,7 +465,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.telred.clearkeep3.ios.dev;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE_SPECIFIER = clearkeep3_distribute;
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.telred.clearkeep3.ios.dev";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
