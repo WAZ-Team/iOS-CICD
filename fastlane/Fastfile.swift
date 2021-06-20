@@ -55,6 +55,8 @@ class Fastfile: LaneFile {
             type: configuration.exportMethod,
             readonly: .fastlaneDefault(isCI),
             appIdentifier: [configuration.bundleIdentifier],
+            keychainName: "fastlane_tmp_keychain",
+            keychainPassword: "123",
             forceForNewDevices: .fastlaneDefault(configuration.exportMethod == "development")
         )
 
