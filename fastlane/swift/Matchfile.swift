@@ -39,6 +39,10 @@ public class Matchfile: MatchfileProtocol {
         -----END OPENSSH PRIVATE KEY-----
         """
     }
+    
+    public var keychainName: String {
+        return "app-signing.keychain-db"
+    }
 }
 
 // Generated with fastlane 2.182.0
