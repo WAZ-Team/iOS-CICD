@@ -25,6 +25,7 @@ jobs:
     - name: Run staging
       env: 
         MATCH_PASSWORD: "123123"
+        APPLE_ID: "namnh@vmodev.com"
       run: bundle exec fastlane stagingLane
       
   production:
@@ -35,4 +36,7 @@ jobs:
     - name: Install Bundle
       run: bundle install
     - name: Run production
+      env: 
+        MATCH_PASSWORD: "123123"
+        APPLE_ID: "namnh@vmodev.com"
       run: bundle exec fastlane productionLane
