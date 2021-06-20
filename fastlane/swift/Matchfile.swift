@@ -31,22 +31,18 @@ public class Matchfile: MatchfileProtocol {
         return "master"
     }
     
-    public var gitBasicAuthorization: String? {
-        return ("namnh92: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").data(using: .utf8)?.base64EncodedString()
+    public var gitPrivateKey: String? {
+        return """
+        -----BEGIN OPENSSH PRIVATE KEY-----
+        b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBwi3ZlSH
+        FMjPhAaCEEBK5WAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAICPoBW8R0LoxGGxY
+        bp4IyKs0PLrTVRD1LGz4F6FtnUVOAAAAoAkwee31ITFBv27nG0kdkHGtXdL6cZB8edg00u
+        QYvOXivNtE3Dzz1A06jFZJsN84Vgijz0g1vHKq5Znh9T4b9Ed5zO7KpG2Irwj+QoQheIrZ
+        RD4cc1Sx1Iojz/LLdUd7/YihK2s5j/xklfUQdBLbgYh7a5XAfR8wAIt+JmEz/FSLfnL13c
+        uPXgjC6ckmvq45dUSrTkdsa0F5PDzlin/xGHc=
+        -----END OPENSSH PRIVATE KEY-----
+        """
     }
-    
-//    public var gitPrivateKey: String? {
-//        return """
-//        -----BEGIN OPENSSH PRIVATE KEY-----
-//        b3BlbnNzaC1rZXktdjEAAAAACmFlczI1Ni1jdHIAAAAGYmNyeXB0AAAAGAAAABBwi3ZlSH
-//        FMjPhAaCEEBK5WAAAAEAAAAAEAAAAzAAAAC3NzaC1lZDI1NTE5AAAAICPoBW8R0LoxGGxY
-//        bp4IyKs0PLrTVRD1LGz4F6FtnUVOAAAAoAkwee31ITFBv27nG0kdkHGtXdL6cZB8edg00u
-//        QYvOXivNtE3Dzz1A06jFZJsN84Vgijz0g1vHKq5Znh9T4b9Ed5zO7KpG2Irwj+QoQheIrZ
-//        RD4cc1Sx1Iojz/LLdUd7/YihK2s5j/xklfUQdBLbgYh7a5XAfR8wAIt+JmEz/FSLfnL13c
-//        uPXgjC6ckmvq45dUSrTkdsa0F5PDzlin/xGHc=
-//        -----END OPENSSH PRIVATE KEY-----
-//        """
-//    }
 }
 
 // Generated with fastlane 2.182.0
