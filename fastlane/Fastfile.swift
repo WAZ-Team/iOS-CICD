@@ -19,9 +19,9 @@ class Fastfile: LaneFile {
         // Run 'pod install'
         cocoapods()
         
-        createKeychain(name: "app-signing.keychain-db"
-                       path: "$RUNNER_TEMP/app-signing.keychain-db",
-                       password: "123",
+//        deleteKeychain(name: "fastlane_keychain")
+        createKeychain(name: "fastlane_keychain",
+                       password: "123123",
                        defaultKeychain: .fastlaneDefault(true),
                        unlock: .fastlaneDefault(true),
                        timeout: 3600)
@@ -57,8 +57,7 @@ class Fastfile: LaneFile {
     
     private func buildProduct(configuration: Configuration, exportIpa: Bool) {
 
-        unlockKeychain(path: "$RUNNER_TEMP/app-signing.keychain-db",
-                       password: "123",
+        unlockKeychain(password: "123123",
                        setDefault: .fastlaneDefault(true))
         
         // Update provisioning profile and certificate for the specified build configuration
@@ -66,8 +65,8 @@ class Fastfile: LaneFile {
             type: configuration.exportMethod,
             readonly: .fastlaneDefault(isCI),
             appIdentifier: [configuration.bundleIdentifier],
-            keychainName: "app-signing.keychain-db",
-            keychainPassword: "123",
+            keychainName: "fastlane_keychain",
+            keychainPassword: "123123",
             forceForNewDevices: .fastlaneDefault(configuration.exportMethod == "development")
         )
 
