@@ -1,0 +1,33 @@
+name: Swift
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+
+  swiftLint:
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Bundle
+      run: bundle install
+    - name: Run swiftlint
+      run: bundle exec fastlane swiftLintLane
+      
+  debug:
+    needs: swiftLint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Install Bundle
+      run: bundle install
+    - name: Run debug
+      env: 
+        FASTLANE_USER: ${{ secrets.FASTLANE_USER }}
+        FASTLANE_PASSWORD: ${{ secrets.FASTLANE_PASSWORD }}
+        MATCH_PASSWORD: ${{ secrets.MATCH_PASSWORD }}
+        FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD: ${{ secrets.FASTLANE_APPLE_APPLICATION_SPECIFIC_PASSWORD }}
+        FASTLANE_SESSION: ${{ secrets.FASTLANE_SESSION }}
+        FASTLANE_TEAM_NAME: ${{ secrets.FASTLANE_TEAM_NAME }}
+      run: bundle exec fastlane stagingLane
