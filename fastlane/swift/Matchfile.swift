@@ -24,7 +24,7 @@ public class Matchfile: MatchfileProtocol {
     }
     
     public var gitBasicAuthorization: String? {
-        return "namnh92:Namkhang2911".data(using: .utf8)?.base64EncodedString()
+        return "namnh92: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".data(using: .utf8)?.base64EncodedString()
     }
 }
 
